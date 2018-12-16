@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      
+
+
+        <style>
+          header{
+            border-style: solid;
+            border-width: 5px 5px;
+            border-color: black;
+            font-size: 1em;
+
+          }
+          .form{
+            text-align: center;
+          }
+            body{
+                background-color: #CCBE28;
+            }
+            h1{
+              font-weight: bold;
+            }
+        </style> 
+
+      </head>
+      <header>
+            <h1 align= "center">PICK A PLACE</h1>
+           
+        </header>
+
+
+    <body>
+            </br>
+
+<!-- zip code form -->   
+
+            <form id= "zipcode_form">
+
+
+            <div align: "center" class= "form">
+              Enter Zipcode:
+              <input type="text" name="zipcode" placeholder="Enter Zipcode">
+              
+              <input type="submit" value="Submit">
+
+
+            </form> 
+              
+             
+
+
+            </div>
+
+
+
+            <br>
+            
+           </br>
+
+
+              <div class="responsive" align= "center">
+              <div class="gallery" >
+
+
+
+                  <img src="static/mexican.jpg" alt="mexican" height="300" width="550" border="5">
+                </a>
+                <div align="center">
+                  <h1><a href ="{{url_for('info', place = 'mexican food')}}" > Mexican</a>
+                </div>
+              </div>
+            </div>
+            </br>   
+           
+            <div class="responsive" align= "center">
+              <div class="gallery" >
+                  <img src="static/chinese.jpg" alt="chinese" height="300" width="550" border="5">
+                </a>
+                <div align="center">
+                  <h1><a href ="{{url_for('info', place = 'chinese food')}}" > Chinese</a>
+              </div>
+            </div>
+            </br>
+           
+            <div class="responsive" align= "center">
+              <div class="gallery" >
+                  <img src="static/indian.jpg" alt="indian" height="300" width="550" border="5">
+                </a>
+                <div align="center">
+                  
+                  <h1><a href ="{{url_for('info', place = 'indian food')}}" >Indian</a>
+
+                  </div>
+              </div>
+            </div>
+          </br>
+            <div class="responsive" align= "center">
+              <div class="gallery" >
+                  <img src="static/america.jpg" alt="american" height="300" width="550" border="5">
+                </a>
+                <div align="center">
+
+                  <h1><a href ="{{url_for('info', place = 'american food')}}" >American</a>
+
+                </div>
+              </div>
+            </div>
+          </br>
+            <div class="responsive" align= "center">
+              <div class="gallery" >
+                  <img src="static/italian.jpg" alt="italian" height="300" width="550" border="5">
+                </a>
+                <div align="center">
+
+                  <h1><a href ="{{url_for('info', place = 'italian food')}}" >Italian</a>
+
+                </div>
+              </div>
+            </div>
+ 
+    </body>
+    <!-- closing body -->
+
+</html>
