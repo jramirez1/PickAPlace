@@ -29,7 +29,7 @@ def home():
 
 @app.route('/zip', methods = ['GET', 'POST'])
 def zip():
-	if request.metho 'Pd ==OST':
+	if request.method =='POST':
 		zip = request.form['zipcode']
 
 		session['zip_code'] = str(zip.replace(' ', "+"))
@@ -50,7 +50,7 @@ def info(place):
 		query_zip=session['zip_code']  
 
 
-	api_key = 'AIzaSyBFfpbANyFIZVheOZ7Pi4iJ5ojT7fjnGEo'
+	api_key = 'put_key_here'
 	endpoint = 'https://maps.googleapis.com/maps/api/place/textsearch/json?'
 
 	food_type = place.replace(' ', '+')
@@ -73,7 +73,7 @@ def restaurant(place_id):
 	
 	restaurant_id = place_id
 
-	api_key = 'AIzaSyBFfpbANyFIZVheOZ7Pi4iJ5ojT7fjnGEo'
+	api_key = 'put_key_here'
 	endpoint = 'https://maps.googleapis.com/maps/api/place/details/json?'
 
 	query_parameters = 'place_id={}&key={}'.format(restaurant_id, api_key)
