@@ -1,0 +1,7 @@
+Requirements:
+Open/create a environment and install the following into it
+To download Flask:
+ pip install Flask
+
+To download Request:
+ pipenv install requests
