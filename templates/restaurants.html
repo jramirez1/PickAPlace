@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+  	<style type="text/css">a {text-decoration: none; color:white;}</style>
+
+    <meta charset="UTF-8">
+    <title>{{results['name']}}</title>
+
+
+
+	<style>
+
+		 header
+       {
+            border-style: solid;
+            border-width: 5px 5px;
+            border-color: black;
+            font-size: 1em;
+        }
+
+        
+
+        h1
+        {
+            font-weight: bold;
+        }
+
+        #outer
+        {
+          width: 100%;
+          text-align: center;
+        }
+        
+        #inner 
+        {
+          display: inline-block;
+        }
+
+        a
+        {
+          color : orange;
+        }
+
+
+        *{transition:all 0.3s ease-in-out;}
+
+            .container{
+              clear:both;
+              overflow:auto;
+            }
+
+            nav{float:right;}
+
+            .logo img{float:left;}
+
+            ul li{
+              display: inline-block;
+              padding-top: 10px
+              padding-left:10px;
+              padding-right: 10px;
+
+              
+              font-size:30px; 
+              font-family:raleway;
+              color:white;
+            }
+
+            ul li:hover{
+              color:orange;
+              
+            }
+
+            nav
+            {
+              padding-top: 50px;
+            }
+
+         html 
+          { 
+            background: url('../static/main_background.jpg')
+            no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+
+          header{
+            border-style: solid;
+            border-width: 5px 5px;
+            border-color: black;
+            font-size: 1em;
+
+          }
+
+	</style>
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+
+
+
+
+			<div class="container">
+            <div class="logo">
+              <img src="../static/pick_a_place_logo.png" alt="" width="130", height = "130"/>
+              </div>
+            <nav>
+              <ul>
+              <li><a href =" {{url_for('home') }} "> Home </a> </li>
+              <li>About</li>
+              
+              </ul>
+              </nav>
+            </div>
+            <hr />
+
+
+
+
+
+
+  	
+  		<div> <h1 style="color:white;">{{results['name']}}</h1></div>
+  		<div style="color:white;"> {{results['formatted_phone_number']}}</div>
+  		<div style="color:white;">&#11088; {{results['rating']}} </div>
+  		<div style="color:white;" >
+  		<br>
+  		<div style="color:orange;">Business Hours </div>
+  			{% for item in results['opening_hours']['weekday_text']%}
+
+  			{{item}}
+  			<br>
+  			
+  			{%endfor%}
+
+  		</div>
+
+
+    		{% set url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFfpbANyFIZVheOZ7Pi4iJ5ojT7fjnGEo&q=place_id:" +  results['place_id'] %}
+    		 <iframe
+			  width="600"
+			  height="450"
+			  frameborder="0" style="border:0"
+
+			  src = {{url}}
+
+			  allowfullscreen>
+			</iframe>
+
+  	
+  </body>
+</html>

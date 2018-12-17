@@ -3,9 +3,20 @@
 
     <head>
       
-
+      <style type="text/css">a {text-decoration: none; color:white;}</style>
 
         <style>
+          
+          html 
+          { 
+            background: url('static/main_background.jpg')
+            no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+
           header{
             border-style: solid;
             border-width: 5px 5px;
@@ -16,38 +27,100 @@
           .form{
             text-align: center;
           }
-            body{
-                background-color: #CCBE28;
+          
+          h1
+          {
+            font-weight: bold;
+          }
+
+
+          
+            *{transition:all 0.3s ease-in-out;}
+
+            .container{
+              clear:both;
+              overflow:auto;
             }
-            h1{
-              font-weight: bold;
+
+            nav{float:right;}
+
+            .logo img{float:left;}
+
+            ul li{
+              display: inline-block;
+              padding-top: 10px
+              padding-left:10px;
+              padding-right: 10px;
+
+              
+              font-size:30px; 
+              font-family:raleway;
+              color:white;
             }
+
+            ul li:hover{
+              color:orange;
+              
+            }
+
+            nav
+            {
+              padding-top: 50px;
+            }
+
+            .food
+            {
+              color: white;
+            }
+
+            #zip_text
+            {
+              color : white;
+            }
+
+
+
+            
         </style> 
 
       </head>
-      <header>
-            <h1 align= "center">PICK A PLACE</h1>
-           
-        </header>
+<body>
+
+  
+
+          
+
+            <div class="container">
+            <div class="logo">
+              <img src="static/pick_a_place_logo.png" alt="" width="130", height = "130"/>
+              </div>
+            <nav>
+              <ul>
+              <li><a href =" {{url_for('home') }} "> Home </a> </li>
+              <li>About</li>
+              </ul>
+              </nav>
+            </div>
+            <hr />
 
 
-    <body>
+
+
             </br>
 
 <!-- zip code form -->   
 
-            <form id= "zipcode_form">
+            <form action = "{{url_for('zip')}}" method = 'post' id= "zipcode_form">
 
 
-            <div align: "center" class= "form">
+            <div id = "zip_text" align: "center" class= "form" color=white>
               Enter Zipcode:
-              <input type="text" name="zipcode" placeholder="Enter Zipcode">
+              <input type="text" name="zipcode" placeholder="Enter Zipcode Or City">
               
-              <input type="submit" value="Submit">
-
-
+              <input type="submit" value="Submit" id = "submitZip">
+              
             </form> 
-              
+              {{zip}}
              
 
 
@@ -68,7 +141,7 @@
                   <img src="static/mexican.jpg" alt="mexican" height="300" width="550" border="5">
                 </a>
                 <div align="center">
-                  <h1><a href ="{{url_for('info', place = 'mexican food')}}" > Mexican</a>
+                  <h1><a href ="{{url_for('info', place = 'mexican food')}}" class= "food" > Mexican</a>
                 </div>
               </div>
             </div>
@@ -79,7 +152,7 @@
                   <img src="static/chinese.jpg" alt="chinese" height="300" width="550" border="5">
                 </a>
                 <div align="center">
-                  <h1><a href ="{{url_for('info', place = 'chinese food')}}" > Chinese</a>
+                  <h1><a href ="{{url_for('info', place = 'chinese food')}}" class= "food"> Chinese</a>
               </div>
             </div>
             </br>
@@ -90,7 +163,7 @@
                 </a>
                 <div align="center">
                   
-                  <h1><a href ="{{url_for('info', place = 'indian food')}}" >Indian</a>
+                  <h1><a href ="{{url_for('info', place = 'indian food')}}" class= "food">Indian</a>
 
                   </div>
               </div>
@@ -102,7 +175,7 @@
                 </a>
                 <div align="center">
 
-                  <h1><a href ="{{url_for('info', place = 'american food')}}" >American</a>
+                  <h1><a href ="{{url_for('info', place = 'american food')}}" class= "food">American</a>
 
                 </div>
               </div>
@@ -114,12 +187,12 @@
                 </a>
                 <div align="center">
 
-                  <h1><a href ="{{url_for('info', place = 'italian food')}}" >Italian</a>
+                  <h1><a href ="{{url_for('info', place = 'italian food')}}" class= "food" >Italian</a>
 
                 </div>
               </div>
             </div>
- 
+
     </body>
     <!-- closing body -->
 
